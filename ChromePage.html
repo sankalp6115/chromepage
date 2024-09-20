@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sankalp Omar</title>
+    <link rel="stylesheet" href="Chrome Page 4.css">
+    <link href='https://fonts.googleapis.com/css?family=Playwrite PE' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/8794/8794260.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+    font-family: 'Harlow Solid Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Harlow Solid Italic'), url('HARLOWSI_1.woff') format('woff');
+}
+body{
+    margin: 0;
+    background: url(https://pbs.twimg.com/media/FyXLTo0XwAUepJq.jpg:large);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    user-select: none;
+}  
+video{
+    position: absolute;
+    z-index: -10;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    filter: brightness(130%);
+    
+}
+h1.name{
+    position: absolute;
+    font-size: 2.5em;
+    font-family: "Playwrite PE";
+    display: inline;
+    color: white;
+    text-shadow: 2px 2px 4px black, -2px -2px 4px black;
+    font-weight: 900;
+    padding: 1vh 0 0 4vh;
+    z-index: 2;
+    position: relative;
+}
+header{
+    /* (--s) control the size*/
+        /* --s: 60px; 
+        --c1: #f2f2f2;
+        --c2: #cdcbcc;
+        --c3: #999999;
+        --_g: 0 120deg,#0000 0;
+        background:
+          conic-gradient(from    0deg at calc(500%/6) calc(100%/3),var(--c3) var(--_g)),
+          conic-gradient(from -120deg at calc(100%/6) calc(100%/3),var(--c2) var(--_g)),
+          conic-gradient(from  120deg at calc(100%/3) calc(500%/6),var(--c1) var(--_g)),
+          conic-gradient(from  120deg at calc(200%/3) calc(500%/6),var(--c1) var(--_g)),
+          conic-gradient(from -180deg at calc(100%/3) 50%,var(--c2)  60deg,var(--c1) var(--_g)),
+          conic-gradient(from   60deg at calc(200%/3) 50%,var(--c1)  60deg,var(--c3) var(--_g)),
+          conic-gradient(from  -60deg at 50% calc(100%/3),var(--c1) 120deg,var(--c2) 0 240deg,var(--c3) 0);
+        background-size: calc(var(--s)*1.732) var(--s); */
+      
+}
+.cal-clock{
+    display: inline-block;
+    position: absolute;
+    left: 35vw;
+    top: 2vh;
+}
+#clock, #calendar {
+    display: inline-block;
+    font-size: 2vw;   
+    color: cyan;
+    -webkit-text-stroke: 0.5px black;
+    letter-spacing: 3px;
+    font-weight: 900;
+    font-family: 'Harlow Solid Italic';
+}
+#clock{
+    font-size: 2.5vw;
+    text-decoration: red overline;
+}
+#calendar{
+    color: red;
+    background-color: yellow;
+    border-radius: 0.8rem;
+    padding: 1vh;
+}
+::placeholder{
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+.search{
+    position: relative;
+    width: 30vw;
+    height: 4vh;
+    border: 0;
+    border-radius: 0.3rem;
+    margin: 1vh 30vw;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+/*Weather App*/
+.container {
+    position: absolute;
+    width: 12vw;
+    height: 12vh;
+    margin-left: 63vw;
+    margin-top: -5vh;
+    text-align: center;
+    padding: 10px;
+    background-image: linear-gradient(50deg,#de6262 ,#ffb88c);
+    border-radius: 5px;
+}
+.container h1 {
+    font-size: 24px;
+}
+
+/*If want to see button and input remove display none*/
+
+.container input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    border: 2px solid black;
+    display: none; 
+}
+
+.container button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;  /*If want to see button and input remove display none*/
+}
+
+.container .weather-info {
+    margin: 0;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 6px;
+}
+
+.container input:focus{
+    outline: none;
+}
+
+/*Side Bar*/
+aside.left{
+    width: max-content;
+    position: relative;
+    background-image: linear-gradient(to left in lch, transparent, rgba(36, 53, 202, 0.5));
+    height: 85vh;
+    padding: 15vh 0 0vh 5vh;
+    transform: translateY(-17.2vh);
+}
+aside.left a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+    font-family: 'Space Grotesk';
+    font-weight: 900;
+    line-height: 1.6rem;
+}
+aside.left a::before{
+    content: '';
+    height: 2px;
+    width: 130px;
+    background-color: red;
+    position: absolute;
+    margin-top: 23px;
+    scale: 0 1;
+    transition: 0.2s;
+    transform-origin: left;
+}
+aside.left a:hover::before{
+    scale: 1;
+}
+aside.left a:hover{
+    color: rgb(55, 255, 0);
+}
+
+@property --angle{
+    inherits: false;
+    initial-value: 0deg;
+    syntax: '<angle>';
+}
+@property --perc{
+    inherits: false;
+    initial-value: 0deg;
+    syntax: '<percentage>';
+}
+
+@keyframes angle {
+    0%{--angle: 0deg;}
+    50%{--angle: 180deg;}
+    100%{--angle: 360deg;}
+}
+/*Middle Menu*/
+.right_menu a::before,.bottom_menu a::before{
+    height: 24px;
+    width: 100px;
+    z-index: 10;
+    position: absolute;
+    opacity: 0;
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+    text-align: center;
+    transform: translateX(-20px) translateY(-30px);
+    border-radius: 5px;
+}
+.right_menu a::after, .bottom_menu a::after{
+    content: '';
+    height: 28px;
+    width: 104px;
+    position: absolute;
+    opacity: 1;  /*This is the reason.*/
+    background-image: conic-gradient(from var(--angle) at -10% 110%,red,cyan,red,cyan);
+    transition: 0.2s;
+    text-align: center;
+    transform: translateX(-75px) translateY(-32px);
+    animation: angle 1s infinite linear;
+    display: none;
+    border-radius: 5px;
+}
+.right_menu a:hover::before,.right_menu a:hover::after,.bottom_menu a:hover::before,.bottom_menu a:hover::after{
+    opacity: 1;
+    display: inline;
+}
+
+
+.right_menu{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3,1fr);
+    float: right;
+    transform: translateY(-105vh) translateX(-5vh);
+    padding: 2vh;
+    gap: 2vh 3vh;
+    border-radius: 10px;
+    border: 2px solid gold;
+}
+.aside_img{
+    height: 7.5vh;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+.aside_img:hover{
+    scale: 1.1;
+    filter: drop-shadow(4px 4px 0px pink);
+}
+
+.right_menu a:nth-child(1)::before{content: 'ChatGPT';}
+.right_menu a:nth-child(2)::before{content: 'Codepen';}
+.right_menu a:nth-child(3)::before{content: 'CSSBattle';}
+.right_menu a:nth-child(4)::before{content: 'Codechef';}
+.right_menu a:nth-child(5)::before{content: 'Arcade';}
+.right_menu a:nth-child(6)::before{content: 'To-Do';}
+.right_menu a:nth-child(7)::before{content: 'Drive';}
+.right_menu a:nth-child(8)::before{content: 'Moviesmod';}
+.right_menu a:nth-child(9)::before{content: 'Amazon';}
+.right_menu a:nth-child(10)::before{content: 'Flipkart';}
+.right_menu a:nth-child(11)::before{content: 'EveryCircuit';}
+.right_menu a:nth-child(12)::before{content: 'Desmos';}
+.right_menu a:nth-child(13)::before{content: 'TinkerCad';}
+.right_menu a:nth-child(14)::before{content: 'GitHub';}
+.right_menu a:nth-child(15)::before{content: 'StackOF';}
+.right_menu a:nth-child(16)::before{content: 'Python';}
+.right_menu a:nth-child(17)::before{content: 'Classroom';}
+.right_menu a:nth-child(18)::before{content: 'ImgBB';}
+.right_menu a:nth-child(19)::before{content: 'Canva';}
+.right_menu a:nth-child(20)::before{content: 'Unstop';}
+.right_menu a:nth-child(21)::before{content: 'Tutorify';}
+.right_menu a:nth-child(22)::before{content: 'Zollege';}
+.right_menu a:nth-child(23)::before{content: 'BuyMeCoffee';}
+
+/*.right_menu a:nth-child(1)::before{content: 'ChatGPT';}*/
+
+/*Bottom Menu*/
+
+.bottom_menu{
+    height: max-content;
+    width: 60%;
+    margin: auto;
+    padding: 10px;
+    background-color: rgba(153, 255, 0, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    backdrop-filter: blur(4px);
+    transform: translateY(-30vh) scaleY(0.4);
+    transform-origin: bottom;
+    transition: 0.2s;
+}
+.bottom_menu:hover{
+    transform: translateY(-30vh) scaleY(1);
+    border-radius: 10px;
+}
+.bottom_menu a{
+    opacity: 0; 
+    transition: 0.5s cubic-bezier(0.87, 0, 0.13, 1);
+    height: 10px;
+}
+.bottom_menu:hover a{
+    opacity: 1;
+    margin: 0 10px;
+}
+.bottom_menu:hover a img{
+    border-radius: 10px;
+    height: 50px;
+    border: 2px solid;
+}
+.btm_img{
+    height: 50px;
+}
+.bottom_menu a:nth-child(1)::before{content: 'Notes';}
+.bottom_menu a:nth-child(2)::before{content: 'HBTU';}
+.bottom_menu a:nth-child(3)::before{content: 'Schedule';}
+
+    </style>
+</head>
+<body>
+    <video autoplay loop muted>
+        <source src="retro-car-porsche-911-moewalls-com.mp4" type="video/mp4">
+      </video>
+    <header>
+        <h1 class="name">sankalp</h1>
+        <div class="cal-clock">    
+            <div id="clock"></div>&nbsp;&nbsp;
+            <div id="calendar"></div>
+        </div>
+            <form action="https://www.google.com/search" method="get" class="searchform" target="_blank" autocomplete="off">
+                <input class="search" name="q" placeholder="Try Searching for 'BANANAS'" accesskey="g" autofocus>
+            </form>
+            <!--Weather App-->
+            <div class="container">
+                <input type="text" id="locationInput" placeholder=" ">
+                <button type="submit" id="searchButton">Search</button>
+                <div class="weather-info">
+                    <h2 style="display: inline;" id="location"></h2>&nbsp;&nbsp;
+                    <p style="display: inline; font-size: 25px;" id="temperature"></p>
+                    <p style="text-transform: capitalize;" id="description"></p>
+                </div>
+            </div>
+    
+    </header>
+    <aside class="left">
+        <a class="side_link" href="https://www.youtube.com/">YOUTUBE                    </a>
+        <a class="side_link" href="https://web.whatsapp.com">WHATSAPP                   </a>
+        <a class="side_link" href="https://mail.google.com/mail/u/0/#inbox">GMAIL       </a>
+        <a class="side_link" href="https://open.spotify.com/">SPOTIFY                   </a>
+        <a class="side_link" href="https://web.telegram.org/k/#-1791244997">TELEGRAM    </a>
+        <a class="side_link" href="https://x.com/?lang=en">TWITTER                      </a>
+        <a class="side_link" href="https://in.linkedin.com/">LINKEDIN                   </a>
+        <a class="side_link" href="https://in.pinterest.com/">PINTEREST                 </a>
+        <a class="side_link" href="https://www.quora.com/">QUORA                        </a>
+        <a class="side_link" href="https://www.reddit.com/">REDDIT                      </a>
+        <a class="side_link" href="https://www.instagram.com">INSTAGRAM                      </a>
+        
+        <hr style="height: 4px; background-color: white;">
+
+        <a class="side_link" href="https://fonts.google.com/">GOOGLE FONTS              </a>
+        <a class="side_link" href="https://chromewebstore.google.com/">CHROME STORE     </a>
+        <a class="side_link" href="https://photos.google.com/explore">GOOGLE PHOTOS     </a>
+        <a class="side_link" href="https://www.google.com/maps">GOOGLE MAPS     </a>
+        <a class="side_link" href="https://studio.youtube.com">YT STUDIO     </a>
+    </aside>
+    
+        <div class="right_menu">
+                <a href="https://chatgpt.com/"><img class="aside_img o1"  src="https://upload.wikimedia.org/wikipedia/commons/a/a4/GPT-4.png"  alt="1"></a>
+                <a href="https://codepen.io"><img class="aside_img o2"  src="https://cdn0.iconfinder.com/data/icons/social-network-27/32/codepen_logo_html_code_css_javascript_programming-512.png"  alt="2"></a>
+                <a href="https://cssbattle.dev/"><img class="aside_img o3"  src="https://asset.brandfetch.io/iduS-g3vNu/id5jvsuxQI.png"  alt="3"></a>
+                <a href="https://www.codechef.com/"><img class="aside_img o4"  src="https://static.uacdn.net/thumbnail/external-app-icons/ce4fd2180646452aa0b03c3ffa3ef8e2.png"  alt="4"></a>
+                <a href="https://go.qwiklabs.com/arcade"><img class="aside_img o5"  src="https://cdn.qwiklabs.com/N1TTSEnjX7blIJW0Irr0B8gfjz7D%2FNBhYlNX9NBFVk4%3D"  alt="5"></a>
+                <a href="https://to-do.live.com/"><img class="aside_img o6"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKuD-HnD7QhRowgfuDDHyObibg4R1MqWY43g&s"  alt="6"></a>
+                <a href="https://drive.google.com/drive/my-drive"><img class="aside_img o7"  src="https://flaticons.net/icon.php?slug_category=application&slug_icon=google-drive"  alt="7"></a>
+                <a href="https://moviesmod.space/movies/page/2/"><img class="aside_img o8"  src="https://png.pngtree.com/element_our/png/20181227/movie-icon-which-is-designed-for-all-application-purpose-new-png_287896.jpg"  alt="8"></a>
+                <a href="https://www.amazon.in/"><img class="aside_img o9"  src="https://cdn0.iconfinder.com/data/icons/most-usable-logos/120/Amazon-512.png"  alt="9"></a>
+                <a href="https://www.flipkart.com/"><img class="aside_img o10" src="https://cdn2.iconfinder.com/data/icons/social-icons-circular-color/512/flipkart-512.png" alt="10"></a>
+                <a href="https://everycircuit.com/app"><img class="aside_img o11" src="https://play-lh.googleusercontent.com/dkRmvNZVKK3NJLiD3XcCst3ALA-fiTjfFCbkghWS5kFBbqC8D7X7sWb_QDjJEeUWIGI" alt="11"></a>
+                <a href="https://www.desmos.com/calculator"><img class="aside_img o12" src="https://avatars.githubusercontent.com/u/1840620?s=280&v=4" alt="12"></a>
+                <a href="https://www.tinkercad.com/dashboard"><img class="aside_img o13" src="https://aeg.alpineschools.org/wp-content/uploads/sites/45/2023/08/Tinkercad.png" alt="13"></a>
+                <a href="https://github.com/"><img class="aside_img o14" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/2048px-Github-desktop-logo-symbol.svg.png" alt="14"></a>
+                <a href="https://stackoverflow.com/"><img class="aside_img o15" src="https://cdn-icons-png.flaticon.com/512/2626/2626299.png" alt="15"></a>
+                <a href="https://www.programiz.com/python-programming/online-compiler/"><img class="aside_img o16" src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png" alt="16"></a>
+                <a href="https://classroom.google.com/?pli=1"><img class="aside_img o17" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXn-hAhV-ryDIy8Nc8nQHWq83wvPAmLHx97A&s" alt="17"></a>
+                <a href="https://sankalp-omar2.imgbb.com/"><img class="aside_img o18" src="https://static.vecteezy.com/system/resources/thumbnails/018/741/987/small/image-landscape-picture-gallery-symbol-user-interface-theme-3d-icon-illustration-render-isolated-in-transparent-background-png.png" alt="18"></a>
+                <a href="https://www.canva.com/"><img class="aside_img o19" src="https://freelogopng.com/images/all_img/1656734305canva-app-icon.png" alt="19"></a>
+                <a href="https://unstop.com/"><img class="aside_img" src="https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/branding-guidelines/icon/unstop-icon-800x800.png" alt="20"></a>
+                <a href="https://www.tutorify.in/home/"><img class="aside_img" src="https://media.licdn.com/dms/image/v2/C560BAQHgESiHe3X8CA/company-logo_200_200/company-logo_200_200/0/1630645751316?e=2147483647&v=beta&t=4GRTkMWE0cmf49u_ACPiBZqbpZ3SNUgwAKzTtXIzqJ0" alt="21"></a>
+                <a href="https://zollege.in/write-review?utm_campaign=site_rev_acq&utm_medium=top_header&utm_source=desktop"><img class="aside_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh2bC6oth-2uvkE0qe-aVW4NusWCRE9c5Avw&s" alt="22"></a>
+                <a href="https://buymeacoffee.com/"><img class="aside_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDmXWmjrJr1l4vZX3DtPi_kVLjFk4cAht_CQ&s" alt="23"></a>
+                
+                <!-- <a href=""><img class="aside_img" src="" alt=""></a> -->
+        </div>
+    
+        <div class="bottom_menu" tabindex="0">
+            <a href="Study\Study_Links.html" target="_blank"><img class="btm_img" src="https://media.istockphoto.com/id/628925698/vector/pile-of-hardcover-books.jpg?s=612x612&w=0&k=20&c=UskxzCZAQ4LXrgMhgW3M8Q5jdtWFPZ8WxwosF6h6euI=" alt="1"></a>
+            <a href="https://hbtu.ac.in/" target="_blank"><img class="btm_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4tM3rjwSxPbwyAlYZkGHMI3jJ4tV_7i95xQ&s" alt="2"></a>
+            <a href="https://docs.google.com/spreadsheets/d/1qTE2zLz3KcDWQ-Zmzg5XoBpHkQDbotWchxHIUix2CWo/edit?gid=0#gid=0" target="_blank"><img class="btm_img" src="https://static.vecteezy.com/system/resources/previews/017/396/799/original/google-sheets-apps-logo-free-png.png" alt="3"></a>
+            
+            
+            <!-- <a href="" target="_blank"><img class="btm_img" src="" alt=""></a> -->
+        </div>
+        
+<script>
+ function updateClock() {
+    let now = new Date();
+    let hours = now.getHours().toString().padStart(2, '0');
+    let minutes = now.getMinutes().toString().padStart(2, '0');
+    let seconds = now.getSeconds().toString().padStart(2, '0');
+    let timeString = `${hours}:${minutes}:${seconds}`;
+    document.getElementById('clock').textContent = timeString;
+}
+
+function updateCalendar() {
+    let now = new Date();
+    let options = { weekday: 'long', month: 'long', day: 'numeric' };
+    let calendarString = now.toLocaleDateString('en-US', options);
+    document.getElementById('calendar').textContent = calendarString;
+}
+
+// Initial update
+updateClock();
+updateCalendar();
+
+// Update clock every second
+setInterval(updateClock, 1000);
+
+
+//Weather App
+const apiKey = '3afc379d046177633db7c6793347a4df';
+        const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+
+        const locationInput = document.getElementById('locationInput');
+        const searchButton = document.getElementById('searchButton');
+        const locationElement = document.getElementById('location');
+        const temperatureElement = document.getElementById('temperature');
+        const descriptionElement = document.getElementById('description');
+
+        // Automatically enter 'Kanpur' and trigger search on page load
+        window.onload = () => {
+            locationInput.value = 'Kanpur';
+            searchButton.click();
+        };
+
+        searchButton.addEventListener('click', () => {
+            const location = locationInput.value;
+            if (location) {
+                fetchWeather(location);
+            }
+        });
+
+        function fetchWeather(location) {
+            const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    locationElement.textContent = data.name;
+                    temperatureElement.textContent = `${Math.round(data.main.temp)}°C`;
+                    descriptionElement.textContent = data.weather[0].description;
+                })
+                .catch(error => {
+                    console.error('Error fetching weather data:', error);
+                });
+        }
+</script>
+</body>
+</html>
