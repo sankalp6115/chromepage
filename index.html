@@ -5,19 +5,17 @@
     <link rel="stylesheet" href="Chrome Page 4.css">
     <link href='https://fonts.googleapis.com/css?family=Playwrite PE' rel='stylesheet'>
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/8794/8794260.png"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    <style>
-        @font-face {
-    font-family: 'Harlow Solid Italic';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Harlow Solid Italic'), url('HARLOWSI_1.woff') format('woff');
-}
-body{
+
+<!-- Fonts Imported -->
+    <link href="https://fonts.cdnfonts.com/css/harlow-solid-italic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+
+<style>
+    body{
     margin: 0;
-    background: url(https://pbs.twimg.com/media/FyXLTo0XwAUepJq.jpg:large);
+    background: url(https://i.ibb.co/CPFTZK5/snapedit-1727784290689.png);
     background-position: center;
     background-attachment: fixed;
     background-size: 100%;
@@ -25,7 +23,7 @@ body{
     overflow: hidden;
     user-select: none;
 }  
-video{
+/* video{
     position: absolute;
     z-index: -10;
     height: 100vh;
@@ -33,7 +31,7 @@ video{
     object-fit: cover;
     filter: brightness(130%);
     
-}
+} */
 h1.name{
     position: absolute;
     font-size: 2.5em;
@@ -62,7 +60,6 @@ header{
           conic-gradient(from   60deg at calc(200%/3) 50%,var(--c1)  60deg,var(--c3) var(--_g)),
           conic-gradient(from  -60deg at 50% calc(100%/3),var(--c1) 120deg,var(--c2) 0 240deg,var(--c3) 0);
         background-size: calc(var(--s)*1.732) var(--s); */
-      
 }
 .cal-clock{
     display: inline-block;
@@ -110,13 +107,14 @@ header{
 .container {
     position: absolute;
     width: 12vw;
-    height: 12vh;
+    height: max-content;
     margin-left: 63vw;
     margin-top: -5vh;
     text-align: center;
-    padding: 10px;
+    
     background-image: linear-gradient(50deg,#de6262 ,#ffb88c);
     border-radius: 5px;
+    font-family:cursive;
 }
 .container h1 {
     font-size: 24px;
@@ -223,6 +221,7 @@ aside.left a:hover{
     text-align: center;
     transform: translateX(-20px) translateY(-30px);
     border-radius: 5px;
+    font-family: 'Space Grotesk';
 }
 .right_menu a::after, .bottom_menu a::after{
     content: '';
@@ -230,7 +229,7 @@ aside.left a:hover{
     width: 104px;
     position: absolute;
     opacity: 1;  /*This is the reason.*/
-    background-image: conic-gradient(from var(--angle) at -10% 110%,red,cyan,red,cyan);
+    background-image: conic-gradient(from var(--angle) at 0% 100%,red,cyan,red,cyan);
     transition: 0.2s;
     text-align: center;
     transform: translateX(-75px) translateY(-32px);
@@ -332,12 +331,12 @@ aside.left a:hover{
 .bottom_menu a:nth-child(2)::before{content: 'HBTU';}
 .bottom_menu a:nth-child(3)::before{content: 'Schedule';}
 
-    </style>
+</style>
 </head>
 <body>
-    <video autoplay loop muted>
+    <!-- <video autoplay loop muted>
         <source src="retro-car-porsche-911-moewalls-com.mp4" type="video/mp4">
-      </video>
+      </video> -->
     <header>
         <h1 class="name">sankalp</h1>
         <div class="cal-clock">    
@@ -412,7 +411,7 @@ aside.left a:hover{
         <div class="bottom_menu" tabindex="0">
             <a href="Study\Study_Links.html" target="_blank"><img class="btm_img" src="https://media.istockphoto.com/id/628925698/vector/pile-of-hardcover-books.jpg?s=612x612&w=0&k=20&c=UskxzCZAQ4LXrgMhgW3M8Q5jdtWFPZ8WxwosF6h6euI=" alt="1"></a>
             <a href="https://hbtu.ac.in/" target="_blank"><img class="btm_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4tM3rjwSxPbwyAlYZkGHMI3jJ4tV_7i95xQ&s" alt="2"></a>
-            <a href="https://docs.google.com/spreadsheets/d/1qTE2zLz3KcDWQ-Zmzg5XoBpHkQDbotWchxHIUix2CWo/edit?gid=0#gid=0" target="_blank"><img class="btm_img" src="https://static.vecteezy.com/system/resources/previews/017/396/799/original/google-sheets-apps-logo-free-png.png" alt="3"></a>
+            <a href="https://photos.fife.usercontent.google.com/pw/AP1GczNfCVeKF33aHGO0kjkjiYK4orMn7K3wRf7Pr5rcV1Nk6MaigfM4_gfnCw=w1296-h869-s-no-gm?authuser=0" target="_blank"><img class="btm_img" src="https://static.vecteezy.com/system/resources/previews/017/396/799/original/google-sheets-apps-logo-free-png.png" alt="3"></a>
             
             
             <!-- <a href="" target="_blank"><img class="btm_img" src="" alt=""></a> -->
